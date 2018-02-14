@@ -1,0 +1,31 @@
+messageTypeMappings:
+  messagePaths:
+    TYPEA:
+      jsonPathsByAuditDataItemIds:
+        PAYLOAD:
+          default: payload
+        ID:
+          default: payload.id
+        MESSAGE:
+          default: message
+        MESSAGE_ID:
+          default: message.id
+        TYPE:
+          default: payload.type
+        DESTINATION:
+          default: payload.destination
+          v1.1: payload.destination.value
+    TYPEB:
+      jsonPathsByAuditDataItemIds:
+        PAYLOAD:
+          default: payload
+        ID:
+          default: payload.id.value
+        MESSAGE:
+          default: message
+        MESSAGE_ID:
+          default: message.id
+        TYPE:
+          default: payload.type
+        DESTINATION:
+          default: payload.destination.value
