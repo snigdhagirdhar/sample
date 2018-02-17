@@ -22,8 +22,9 @@ Package com.sample.aop
 
 ## AccessibleCountriesVerification class is using Aspect. This is used for checking user has access for the requested countries.
 
-   *    Wherever in the code, the annotation Countries will be used, the method verifyAndPassAccessibleCountries will be executed and the user access
-        will be verified before proceeding further.
+   *    Wherever in the code, the annotation Countries will be used, the method verifyAndPassAccessibleCountries will be executed and the user accessible countries
+        will be verified before proceeding further. If user requests countries A,B,C and user has to only A and C, then a string collection containing of only A and C will
+        be returned.
 
 
 
