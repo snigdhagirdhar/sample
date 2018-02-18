@@ -1,4 +1,4 @@
-package messagededupe;
+package com.sample.messagededupe;
 
 public interface ReceivedMessageRepository {
 

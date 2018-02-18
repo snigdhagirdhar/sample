@@ -1,7 +1,5 @@
 package com.sample.messagededupe;
 
-import messagededupe.HashMapReceivedMessageRepository;
-import messagededupe.ReceivedMessage;
 import org.junit.Before;
 import org.junit.Test;
 

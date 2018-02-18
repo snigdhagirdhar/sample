@@ -1,4 +1,4 @@
-package messagededupe;
+package com.sample.messagededupe;
 
 import com.google.common.base.Strings;
 import org.apache.commons.lang3.builder.EqualsBuilder;

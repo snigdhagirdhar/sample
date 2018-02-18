@@ -1,7 +1,7 @@
-package messagededupe.aspect;
+package com.sample.messagededupe.aspect;
 
-import messagededupe.DeDuplicationService;
-import messagededupe.annotation.DeDupe;
+import com.sample.messagededupe.DeDuplicationService;
+import com.sample.messagededupe.annotation.DeDupe;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -27,7 +27,7 @@ public class DeDuplicationAspect {
         this.deDuplicationService = deDuplicationService;
     }
 
-    @Pointcut("@annotation(com.jpmc.gps.messagededupe.annotation.DeDupe) && execution(* *(..))")
+    @Pointcut("@annotation(com.sample.messagededupe.annotation.DeDupe) && execution(* *(..))")
     public void controllerMethodsForDeDupe() {
         //Used to facilitate the point cut only, adds description to the point cut for readability
     }

@@ -1,8 +1,7 @@
 package com.sample.messagededupe.aspect;
 
-import messagededupe.DeDuplicationService;
-import messagededupe.annotation.DeDupe;
-import messagededupe.aspect.DeDuplicationAspect;
+import com.sample.messagededupe.DeDuplicationService;
+import com.sample.messagededupe.annotation.DeDupe;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.junit.Before;

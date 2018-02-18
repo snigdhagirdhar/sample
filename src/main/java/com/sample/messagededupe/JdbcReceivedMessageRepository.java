@@ -1,4 +1,4 @@
-package messagededupe;
+package com.sample.messagededupe;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +11,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.function.Supplier;
 
+/**
+ * Jdbc Message Repository, this is used for saving and purging the messages in the database.
+ */
 @Repository
 public class JdbcReceivedMessageRepository implements ReceivedMessageRepository {
     private static final Logger log = LoggerFactory.getLogger(JdbcReceivedMessageRepository.class);
