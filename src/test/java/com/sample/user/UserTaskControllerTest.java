@@ -43,15 +43,14 @@ public class UserTaskControllerTest {
     private void givenUserTasksForCountries(List<String> countries) {
         given(userTaskServiceMock.getTasks(eq(countries)))
                 .willAnswer(invocationOnMock -> {
-                   return countries
-                           .stream()
-                           .map(this::createUserTask)
-                           .collect(Collectors.toList());
+                    return countries
+                            .stream()
+                            .map(this::createUserTask)
+                            .collect(Collectors.toList());
                 });
     }
 
     private UserTask createUserTask(String country) {
         return new UserTask("testId", country, "testDesc", LocalDateTime.now(), "testProcessName");
     }
-
 }
