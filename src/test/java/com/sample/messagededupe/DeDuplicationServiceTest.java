@@ -82,7 +82,7 @@ public class DeDuplicationServiceTest {
         } catch (DuplicateMessageReceivedException ex) {
             assertThat(ex.getMessageValue(), CoreMatchers.equalTo(TEST_MESSAGE_ID));
             assertThat(ex.getSource(), CoreMatchers.equalTo(TEST_SOURCE));
-            assertThat(ex.getMessage(), CoreMatchers.equalTo("Received duplicate message, id: " + TEST_MESSAGE_ID + " source: " + TEST_SOURCE));
+            assertThat(ex.getMessage(), CoreMatchers.equalTo("Received duplicate message: " + TEST_MESSAGE_ID + " source: " + TEST_SOURCE));
         }
     }
 
