@@ -40,4 +40,6 @@ Package com.sample.messagededupe
 
     *   The messages could be saved in a Database Repository or HashMapRepository.
 
-    *   Messages saved in the database have a time to live. Messages saved in the memory are purged when the application stops.
+    *   Messages saved in the database have a time to live and are purged accordingly.
+
+    *   Messages saved in the memory are purged when the application stops. This was only for testing purpose.
