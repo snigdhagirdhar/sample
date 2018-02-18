@@ -1,6 +1,9 @@
-package com.sample.aop;
+package com.sample.user.aop;
 
 import com.google.common.collect.Iterables;
+import com.sample.user.Authentication;
+import com.sample.user.Countries;
+import com.sample.user.Entitlements;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -34,12 +37,22 @@ public class AccessibleCountriesVerification {
         this.authentication = authentication;
     }
 
-    @Pointcut("execution(* *(.., @com.sample.aop.Countries (*), ..))")
+    @Pointcut("execution(* *(.., @com.sample.user.Countries (*), ..))")
     public void controllerMethodsTakingCountries() {}
 
     @Pointcut("@within(org.springframework.stereotype.Controller)")
     public void allControllerMethods() {}
 
+    /**
+     * The list countries are the filtered countries list which the user has access for.
+     * AccessibleCountriesVerification class filters the countries list.
+     *
+     * If the countries are absent, then all the user accessible countries are returned.
+     *
+     * @param joinPoint
+     * @return
+     * @throws Throwable
+     */
     @Around("controllerMethodsTakingCountries()")
     public Object verifyAndPassAccessibleCountries(ProceedingJoinPoint joinPoint) throws Throwable {
         String user = authentication.getUserId();
@@ -69,15 +82,15 @@ public class AccessibleCountriesVerification {
     private Object getAccessibleCountries(String user, Object countries) {
         if(isNullOrEmpty((Iterable<?>) countries)) {
             final Set<String> countriesSet = entitlements.getAccessibleCountries(user);
-            LOG.debug("No countriesprovided by user {}, using all Accessible countries: {}", user, countriesSet);
+            LOG.debug("No countries provided by user {}, using all Accessible countries: {}", user, countriesSet);
             return new ArrayList(countriesSet);
         }
         LOG.debug("Checking privileges for user {} and contries {}", user, countries);
         if (entitlements.isAccessibleForCountries(user, (Collection<String>) countries)) {
-            LOG.debug("Sap legal entity check passed for user {} and countries{}", user, countries);
+            LOG.debug("Country check passed for user {} and countries{}", user, countries);
             return new ArrayList<>((Collection<? extends String>) countries);
         }
-        LOG.debug("User {} does not have entitlements for all requested countries", user, countries);
+        LOG.debug("User {} does not have access for all requested countries", user, countries);
         throw new RuntimeException("User does not have privileges for all requested Countries");
     }
 

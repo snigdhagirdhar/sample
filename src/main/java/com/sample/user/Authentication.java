@@ -1,4 +1,4 @@
-package com.sample.aop;
+package com.sample.user;
 
 public interface Authentication {
 

@@ -1,4 +1,4 @@
-package com.sample.aop;
+package com.sample.user;
 
 import java.util.Collection;
 import java.util.Set;

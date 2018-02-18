@@ -1,7 +1,10 @@
-package com.sample.aop;
+package com.sample.user.aop;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.sample.user.Authentication;
+import com.sample.user.Countries;
+import com.sample.user.Entitlements;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.junit.Before;
