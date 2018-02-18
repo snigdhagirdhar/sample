@@ -18,7 +18,7 @@ Package com.sample.parser
 Note: All the enumeration values used are only test values.
 
 
-Package com.sample.aop
+Package com.sample.user.aop
 
 ## AccessibleCountriesVerification class is using Aspect. This is used for checking user has access for the requested countries.
 
