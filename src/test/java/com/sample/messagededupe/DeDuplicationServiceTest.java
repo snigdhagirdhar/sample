@@ -1,9 +1,5 @@
 package com.sample.messagededupe;
 
-import messagededupe.DeDuplicationService;
-import messagededupe.DuplicateMessageReceivedException;
-import messagededupe.ReceivedMessage;
-import messagededupe.ReceivedMessageRepository;
 import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;

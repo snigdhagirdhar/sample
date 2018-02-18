@@ -1,4 +1,4 @@
-package messagededupe;
+package com.sample.messagededupe;
 
 import com.google.common.base.Strings;
 import org.slf4j.Logger;
@@ -7,6 +7,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.function.Supplier;
 
+/**
+ * The service is used for verifying if the message received is a duplicate or not.
+ * Messages received are saved in the repository for a given duration of time called TimeToLive.
+ * After the timeToLive the messages are purged.
+ *
+ * Only unique messages will be saved in the repository.
+ * The Duplicate messages will be rejected.
+ */
 public class DeDuplicationService {
     private int timeToLive;
     private ReceivedMessageRepository receivedMessageRepository;

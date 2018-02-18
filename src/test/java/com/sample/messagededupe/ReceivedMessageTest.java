@@ -1,6 +1,5 @@
 package com.sample.messagededupe;
 
-import messagededupe.ReceivedMessage;
 import org.junit.Test;
 
 import java.time.Instant;

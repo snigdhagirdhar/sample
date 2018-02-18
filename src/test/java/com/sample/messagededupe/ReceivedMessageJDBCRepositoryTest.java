@@ -1,7 +1,5 @@
 package com.sample.messagededupe;
 
-import messagededupe.JdbcReceivedMessageRepository;
-import messagededupe.ReceivedMessage;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Spy;

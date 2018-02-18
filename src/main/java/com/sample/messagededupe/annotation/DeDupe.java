@@ -1,4 +1,4 @@
-package messagededupe.annotation;
+package com.sample.messagededupe.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
