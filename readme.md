@@ -26,7 +26,7 @@ Package com.sample.user.aop
         will be verified before proceeding further. If user requests countries A,B,C and user has to only A and C, then a string collection containing of only A and C will
         be returned.
 
-
+   *    Added a sample controller the annotation Countries is used. 
 
 
 
